@@ -136,7 +136,7 @@
 
                 <form method="post" name="bacform" action="alcohol.asp">
                     
-                    <div class="card px-3 py-4 col-md-4">
+                    <div class="card px-3 py-4">
                         <div class="card-wrapper flip-card">
 
                             <h3 class="mbr-title mbr-fonts-style mbr-bold mbr-black align-center display-2"><span
@@ -210,7 +210,7 @@
                     </div>
 
                     <a id="result"></a>
-                    <div class="card px-3 py-4 col-md-4">
+                    <div class="card px-3 py-4">
                         <div class="card-wrapper flip-card">
                             <div class="card-img">
                                 <img src="./index_files/drum.jpg" alt="eCommerce Website Template Cafe" title="">
@@ -233,7 +233,7 @@
 
                 </form>
 
-                <div class="card px-3 py-4 col-md-4">
+                <div class="card px-3 py-4">
                     <div class="card-wrapper flip-card">
                         <div class="card-img">
                             <h3 class="mbr-title mbr-fonts-style mbr-bold mbr-black align-center display-2"><span
@@ -305,25 +305,24 @@
 
     <script language="JavaScript">
         function onDeviceReady() {
-        document.removeEventListener('deviceready', onDeviceReady, false);
-        alert(admob);
-        // Set AdMobAds options:
-        admob.setOptions({
-            publisherId:          "ca-app-pub-3506360182754935/9235156108",  // Required
-            interstitialAdId:     "ca-app-pub-3506360182754935/1032591827",  // Optional
-            tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional
-            tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
-            tappxShare:           0.5                              ,          // Optional
-            isTesting: true
-        });
-        alert(admob.createBannerView);
-        // Start showing banners (atomatic when autoShowBanner is set to true)
-        alert(admob.createBannerView());
-        
-        // Request interstitial (will present automatically when autoShowInterstitial is set to true)
-        admob.requestInterstitialAd();
+            document.removeEventListener('deviceready', onDeviceReady, false);
+            alert(admob);
+            // Set AdMobAds options:
+            admob.setOptions({
+                publisherId:          "ca-app-pub-3506360182754935/9235156108",  // Required
+                interstitialAdId:     "ca-app-pub-3506360182754935/1032591827",  // Optional
+                tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional
+                tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
+                tappxShare:           0.5                              ,          // Optional
+                isTesting: true
+            });
+            alert(admob.createBannerView);
+            // Start showing banners (atomatic when autoShowBanner is set to true)
+            alert(admob.createBannerView());
+            
+            // Request interstitial (will present automatically when autoShowInterstitial is set to true)
+            admob.requestInterstitialAd();
         }
-        
         document.addEventListener("deviceready", onDeviceReady, false);
             
         var myStorage = window.localStorage;
@@ -336,6 +335,7 @@
             if (myStorage.getItem('drinks') && myStorage.getItem('type')){
                 document.getElementById('total').innerHTML = myStorage.getItem('drinks') * myStorage.getItem('type') + "ml";
             }
+            alert(1);
         };
 
         function updateTotal(){
