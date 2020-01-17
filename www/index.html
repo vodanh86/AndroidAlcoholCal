@@ -304,6 +304,28 @@
     <script src="./index_files/formoid.min.js"></script>
 
     <script language="JavaScript">
+        function onDeviceReady() {
+        document.removeEventListener('deviceready', onDeviceReady, false);
+        alert(admob);
+        // Set AdMobAds options:
+        admob.setOptions({
+            publisherId:          "ca-app-pub-3506360182754935/9235156108",  // Required
+            interstitialAdId:     "ca-app-pub-3506360182754935/1032591827",  // Optional
+            tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional
+            tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
+            tappxShare:           0.5                              ,          // Optional
+            isTesting: true
+        });
+        alert(admob.createBannerView);
+        // Start showing banners (atomatic when autoShowBanner is set to true)
+        alert(admob.createBannerView());
+        
+        // Request interstitial (will present automatically when autoShowInterstitial is set to true)
+        admob.requestInterstitialAd();
+        }
+        
+        document.addEventListener("deviceready", onDeviceReady, false);
+            
         var myStorage = window.localStorage;
         window.onload = function () {
             if (myStorage.getItem('drinks')) document.forms.bacform.drinks.value = myStorage.getItem('drinks');
