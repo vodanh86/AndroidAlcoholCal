@@ -105,6 +105,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <preference name="android-targetSdkVersion" value="28"/>
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
